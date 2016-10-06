@@ -143,7 +143,17 @@ void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
 {
     int8_t sign = 1;
     xprintf("action_function: %d, opt: %02X\n", id, opt);
-    if(event->event.pressed){
+    if(id == LFK_ESC_TILDE){
+        // Send ~ on shift-esc
+        void (*method)(uint8_t) = (event->event.pressed) ? &add_key : &del_key;
+        uint8_t shifted = get_mods() & (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT));
+        if(layer_state == 0){
+            method(shifted ? KC_GRAVE : KC_ESCAPE);
+        }else{
+            method(shifted ? KC_ESCAPE : KC_GRAVE);
+        }
+        send_keyboard_report();
+    }else if(event->event.pressed){
         switch(id){
             case LFK_CLEAR:
                 // Go back to default layer

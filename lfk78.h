@@ -15,17 +15,18 @@
 #endif
 
 enum action_functions {
-    LFK_CLEAR = 0,       // Resets all layers
-    LFK_LED_TOGGLE,             // Adjusts LED backlighting
+    LFK_CLEAR = 0,          // Resets all layers
+    LFK_ESC_TILDE,          // esc+lshift = ~
+    LFK_LED_TOGGLE,         // Adjusts LED backlighting
     LFK_LED_UP,             // Adjusts LED backlighting
-    LFK_LED_DOWN,             // Adjusts LED backlighting
-    LFK_CLICK_TOGGLE,      // Adjusts click duration
-    LFK_CLICK_FREQ_HIGHER,        // Adjusts click frequency
-    LFK_CLICK_FREQ_LOWER,        // Adjusts click frequency
-    LFK_CLICK_TIME_LONGER,      // Adjusts click duration
-    LFK_CLICK_TIME_SHORTER,      // Adjusts click duration
-    LFK_DEBUG_SETTINGS,   // prints LED and click settings to HID
-    LFK_LED_TEST        // cycles through switch and RGB LEDs
+    LFK_LED_DOWN,           // Adjusts LED backlighting
+    LFK_CLICK_TOGGLE,       // Adjusts click duration
+    LFK_CLICK_FREQ_HIGHER,  // Adjusts click frequency
+    LFK_CLICK_FREQ_LOWER,   // Adjusts click frequency
+    LFK_CLICK_TIME_LONGER,  // Adjusts click duration
+    LFK_CLICK_TIME_SHORTER, // Adjusts click duration
+    LFK_DEBUG_SETTINGS,     // prints LED and click settings to HID
+    LFK_LED_TEST            // cycles through switch and RGB LEDs
 };
 
 

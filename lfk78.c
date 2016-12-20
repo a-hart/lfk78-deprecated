@@ -1,20 +1,20 @@
+#include <avr/sfr_defs.h>
+#include <avr/timer_avr.h>
 #include "lfk78.h"
 #include "issi.h"
-#include <avr/sfr_defs.h>
-#include "audio/audio.h"
 #include "TWIlib.h"
-#include "avr/timer_avr.h"
-// #include "audio/song_list.h"
+#include "lighting.h"
 
 #ifdef AUDIO_ENABLE
 float test_sound[][2] = SONG(ODE_TO_JOY);
+#include <audio/audio.h>
 #endif
 
 
-uint8_t under_red = 0;
-uint8_t under_green = 0;
-uint8_t under_blue = 0;
-uint8_t backlight = 0;
+uint8_t under_red = 255;
+uint8_t under_green = 255;
+uint8_t under_blue = 255;
+uint8_t backlight = 255;
 uint8_t led_toggle = 1;
 
 uint16_t click_hz = 500;
@@ -51,8 +51,8 @@ void matrix_init_kb(void)
 
 #ifdef ISSI_ENABLE
     issi_init();
-    // led_test();
-    set_underglow(255, 255, 255);
+    set_underglow(under_red, under_green, under_blue);
+    set_backlight(backlight);
 #endif
 }
 

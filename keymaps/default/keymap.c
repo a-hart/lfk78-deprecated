@@ -1,4 +1,4 @@
-#include "lfk78.h"
+#include "lfk78_revc.h"
 #include "issi.h"
 #include "action_layer.h"
 
@@ -24,6 +24,8 @@ enum keymap_layout {
    * | F9 | F10|  |Ctrl| Win|Alt |      Space            |Alt |Win | Ctrl|    |Lft| Dn |Rig |
    * `---------'  `------------------------------------------------------'    `-------------'
    */
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = KEYMAP(
   KC_VOLD, KC_VOLU,   KC_FN11,KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL,  KC_BSPC,  KC_INS, KC_PGUP,

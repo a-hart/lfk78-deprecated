@@ -1,8 +1,8 @@
-SRC = lighting.c issi.c TWIlib.c
+SRC =
 
 # MCU name
-#MCU = at90usb1287
-MCU = atmega32u4
+MCU = at90usb1286
+# MCU = atmega32u4
 
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the
@@ -47,7 +47,7 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 #   Atmel DFU loader 4096
 #   LUFA bootloader  4096
 #   USBaspLoader     2048
-OPT_DEFS += -DBOOTLOADER_SIZE=4096
+OPT_DEFS += -DBOOTLOADER_SIZE=8192
 
 ifndef QUANTUM_DIR
 	include ../../Makefile
@@ -55,5 +55,5 @@ endif
 
 
 ifeq ($(strip $(ISSI_ENABLE)), yes)
-    TMK_COMMON_DEFS += -DISSI_ENABLE
+    # TMK_COMMON_DEFS += -DISSI_ENABLE
 endif
